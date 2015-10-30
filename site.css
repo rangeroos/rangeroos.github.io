@@ -1,8 +1,11 @@
 video { display: block; }
 
-body {
+html {
      background: url(rangeroos-frame1.jpg) #000 no-repeat center center fixed;
+     background-size: cover;
 }
+
+body { background: none; }
 
 h1,h2 {
   font-family: 'Oswald', sans-serif;
@@ -42,7 +45,7 @@ textarea {
   -moz-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   width: auto;
-  background: url(rangeroos.jpg) no-repeat;
+  background: url(rangeroos-frame1.jpg) no-repeat;
   background-size: cover;
 }*/
 video#bgvid {
@@ -56,7 +59,7 @@ video#bgvid {
     z-index: -100;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url(rangeroos.jpg) no-repeat;
+    background: url(rangeroos-frame1.jpg) no-repeat;
     background-size: cover;
 }
 .video {
@@ -117,8 +120,8 @@ video#bgvid {
   line-height: 25px;
 }
 
-@media screen and (max-width: 768px) {
-    body {
+@media screen and (max-width: 767px) {
+    html {
          background: url(rangeroos.jpg) #000 no-repeat center center fixed;
     }
     #bgvid {

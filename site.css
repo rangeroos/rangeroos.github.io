@@ -1,5 +1,9 @@
 video { display: block; }
 
+body {
+     background: url(rangeroos-frame1.jpg) #000 no-repeat center center fixed;
+}
+
 h1,h2 {
   font-family: 'Oswald', sans-serif;
   font-weight: 400;
@@ -113,7 +117,7 @@ video#bgvid {
   line-height: 25px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 768px) {
     body {
          background: url(rangeroos.jpg) #000 no-repeat center center fixed;
     }

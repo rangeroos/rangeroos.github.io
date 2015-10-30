@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="site.css" />
+</head>
+<body>
+    <div id="header">
+      <video autoplay loop poster="rangeroos.jpg" id="bgvid">
+          <source src="rangeroos.webm" type="video/webm">
+          <source src="rangeroos.mp4" type="video/mp4">
+      </video>
+
+      <div class="container">
+        <div class="row">
+          <div id="logo" class="col-sm-5 center-block">
+            <img src="logo.png" class="img-responsive">
+          </div>
+          <div class="col-sm-7">
+            <h1 class="text-center">GIDDY UP!</h1>
+            <div class="video-embed embed-responsive embed-responsive-16by9 visible-xs-block">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Wn-gEOZS_So?modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div id="contactWell" class="well">
+              <h3 id="contactFormHeader">Take a Rangeroo home with you, or book us for your next event!</h3>
+              <form id="contactForm">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input class="form-control" id="name" name="name" placeholder="First/Last Name" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="phone">Number</label>
+                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Telephone Number">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="inquiry">Inquiry</label>
+                      <textarea style="height:80px;" class="form-control" id="inquiry" name="inquiry" placeholder="I would like to purchase/rent/learn more about Rangeroos!" required></textarea>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-success btn-block btn-lg">Submit</button>
+              </form>
+            </div>
+            <div class="text-center">
+              <h2 style="margin-bottom:0">STAY TUNED</h2>
+              <p style="marign-top:4px;color:#fff;font-size:18px;font-style:italic">Full website coming soon</p>
+            </div>
+            <div id="footer">
+              <span>Copyright © 2015 Rangeroos</span> | <span>Birmingham, AL</span> | <span>Site by <a href="http://igdit.com">Ignition Digital</a></span>
+            </div>
+          </div>
+      </div>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+<script>
+  $(document).ready(function() {
+    $('#contactForm').on('submit', function(e) {
+      var $form = $(this);
+      var $well = $('#contactWell');
+      $.ajax({
+        type: "POST",
+        url: "https://formsand.co/f/00exw6",
+        data: $form.serialize(),
+        success: function() {
+            $('#contactFormHeader').text("Thanks! We will be in touch with you shortly.");
+            $well.addClass('success');
+            $form.hide();
+        },
+        error: function() {
+            $('#contactFormHeader').html("<span class='error'>Something went wrong. Please refresh the page and try again or simply email your inquiry to <a href='mailto:info@rangeroos.com'>info@rangeroos.com</a></span>");
+            $well.addClass('error');
+            $form.hide();
+        }
+      })
+      e.preventDefault();
+    });
+  });
+</script>
+<!--[if lt IE 9]>
+<script>
+	document.createElement('video');
+</script>
+<![endif]-->
+</body>
+</html>

@@ -1,8 +1,11 @@
 video { display: block; }
 
 html {
-     background: url(rangeroos-frame1.jpg) #000 no-repeat center center fixed;
-     background-size: cover;
+  background: url(rangeroos-frame1.jpg) #000 no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body { background: none; }

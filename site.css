@@ -8,9 +8,17 @@ html {
   background-size: cover;
   min-width: 100%;
   min-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-body { background: none; }
+body {
+  background: none;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+}
 
 h1,h2 {
   font-family: 'Oswald', sans-serif;

@@ -1,99 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rangeroos – Giddy Up!</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="site.css" />
+  <meta charset="utf-8">
+  <title>Rangeroos – Giddy Up!</title>
+  <meta name="description" content="Rangeroos – Buy or Rent a Rideable Toy">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="icon" type="image/png" href="favicon.ico">
+
 </head>
 <body>
-    <div id="header">
-      <video autoplay loop poster="rangeroos-frame1.jpg" id="bgvid">
-          <source src="rangeroos.webm" type="video/webm">
-          <source src="rangeroos.mp4" type="video/mp4">
-      </video>
-
-      <div class="container">
-        <div class="row">
-          <div id="logo" class="col-sm-5 center-block">
-            <img src="logo.png" class="img-responsive">
-          </div>
-          <div class="col-sm-7">
-            <h1 class="text-center">GIDDY UP!</h1>
-            <div class="video-embed embed-responsive embed-responsive-16by9 visible-xs-block">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Wn-gEOZS_So?modestbranding=1&autohide=1&showinfo=0&controls=0" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div id="contactWell" class="well">
-              <h3 id="contactFormHeader">Take a Rangeroo home with you, or book us for your next event!</h3>
-              <form id="contactForm">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="name">Name</label>
-                      <input class="form-control" id="name" name="name" placeholder="First/Last Name" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="email">Email</label>
-                      <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="phone">Number</label>
-                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Telephone Number">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="inquiry">Inquiry</label>
-                      <textarea style="height:80px;" class="form-control" id="inquiry" name="inquiry" placeholder="I would like to purchase/rent/learn more about Rangeroos!" required></textarea>
-                    </div>
-                  </div>
-                </div>
-                <button type="submit" class="btn btn-success btn-block btn-lg">Submit</button>
-              </form>
-            </div>
-            <div class="text-center">
-              <h2 style="margin-bottom:0">STAY TUNED</h2>
-              <p style="marign-top:4px;color:#fff;font-size:18px;font-style:italic">Full website coming soon</p>
-            </div>
-            <div id="footer">
-              <span>Copyright © 2015 Rangeroos</span> | <span>Birmingham, AL</span> | <span>Site by <a href="http://igdit.com">Ignition Digital</a></span>
-            </div>
-          </div>
+  <div id="header">
+    <div id="poster"></div>
+    <video autoplay loop poster="img/rangeroos-frame1.jpg" id="bgvid">
+        <source src="rangeroos.webm" type="video/webm">
+        <source src="rangeroos.mp4" type="video/mp4">
+    </video>
+      <ul id="nav">
+        <li><a class="scroller" href="#about">ABOUT</a></li>
+        <li><a class="scroller" href="#rent">RENT</a></li>
+        <li><a class="scroller" href="#buy">BUY</a></li>
+        <li><a class="scroller" href="#contact">CONTACT</a></li>
+      </ul>
+      <div class="clearfix"></div>
+    <div class="container">
+      <div class="row">
+        <div id="logo" class="col-sm-6 center-block">
+          <img src="img/logo.png" class="img-responsive center-block">
+          <img id="pony-logo" src="img/ponycycle.png" class="img-responsive center-block">
+        </div>
+        <div id="callout" class="col-sm-6 hidden-xs text-right">
+          <h1 class="text-centerf">GIDDY UP!</h1>
+          <h4>A rideable toy / companion / best friend</h4>
+        </div>
       </div>
     </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-<script>
-  $(document).ready(function() {
-    $('#contactForm').on('submit', function(e) {
-      var $form = $(this);
-      var $well = $('#contactWell');
-      $.ajax({
-        type: "POST",
-        url: "https://formsand.co/f/00exw6",
-        data: $form.serialize(),
-        success: function() {
-            $('#contactFormHeader').text("Thanks! We will be in touch with you shortly.");
-            $well.addClass('success');
+  </div>
+
+  <div id="about" class="section container">
+    <h2>RIDING IS BELIEVING</h2>
+    <div class="row">
+      <div class="col-sm-6">
+        <p>
+          Riding a Rangeroo is unlike anything you've experienced.
+          Whether you're a child, adolescent, or even an adult, there is a Rangeroo for you!
+          Watch the video and see for yourself.
+        </p>
+      </div>
+      <div class="col-sm-6 video-container">
+        <div class="video-embed embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Wn-gEOZS_So?modestbranding=1&autohide=1&showinfo=0&controls=0&rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="rent" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-push-6 pad-left-sm-up">
+          <h2>BE THE RIDE OF THE PARTY</h2>
+          <p>
+            Book us for your next party or event and we’ll bring the entire “herd” to you!
+            We currently offer 2-hour sessions for $300.
+            Consists of small, medium, and adult-sized Rangeroos.
+          </p>
+          <div class="alert alert-info">
+            Once we receive your request, we will verify availability and send the appropriate invoice.
+            If there is a scheduling conflict, we will notify you.
+            Deposit remainders are due 1-week prior to scheduled event.
+          </div>
+        </div>
+        <div class="col-sm-6 col-sm-pull-6">
+          <div class="alert alert-success status-box" style="display:none">
+            <h3 class="title">Success</h3>
+            <div class="body">We will be in touch with you shortly regarding your event!</div>
+          </div>
+          <form id="rental-form">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input class="form-control" id="name" name="Name" placeholder="First/Last Name" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="date">Preferred Date/Time</label>
+                  <input type="datetime" class="form-control" id="date" name="Rental Date/Time" placeholder="Date/time of the event" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" class="form-control" id="email" name="Email Address" placeholder="Email Address" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="phone">Number</label>
+                  <input type="tel" class="form-control" id="phone" name="Phone Number" placeholder="Telephone Number">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="payment">Preferred Payment</label>
+              <select id="payment" name="Payment Requested" class="form-control">
+                <option>Pay In Full ($300)</option>
+                <option>Put Down Deposit ($100)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="inquiry">Notes &amp; Accomodations</label>
+              <textarea style="height:80px;" class="form-control" id="inquiry" name="Notes" placeholder="Any other special accomodations or questions you may have"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block btn-lg btn-submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="buy" class="section container">
+    <h2 style="margin:0">ORDER YOURS TODAY</h2>
+    <div class="subtitle">Take a Rangeroo home with you!</div>
+    <a href='https://mkt.com/rangeroos' class='sq-embed-menu' data-menu-item-images='large' data-menu-accent-color='4FA5C7' data-menu-template='column' data-menu-border='hide' data-menu-item-descriptions='show' >Order Online</a>
+    <script src="https://cdn.sq-api.com/market/embed.js" charset="utf-8"></script>
+  </div>
+
+  <div id="contact" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h2>DROP US A LINE</h2>
+          <p class="links">
+            <span style="line-height:24px; display:inline-block">
+              <span class="fa fa-building" style="font-size:18px"></span>
+              <a href="https://www.google.com/maps/place/24+Squires+Glenn+Ln,+Leeds,+AL+35094/@33.4554141,-86.6050949,17z">
+                24 Squires Glenn Lane
+                <br>
+                <span style="margin-left:20px">Leeds, AL 35094</span>
+              </a>
+            </span>
+            <br>
+            <span class="fa fa-phone" style="font-size:18px"></span> <a href="tel:+12055876155">(205) 587-6155</a>
+            <br>
+            <span class="fa fa-envelope"></span> <a href="mailto:info@rangeroos.com">info@rangeroos.com</a>
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <div class="alert alert-success status-box" style="display:none">
+            <h3 class="title">Success</h3>
+            <div class="body">We will be in touch with you shortly regarding your event!</div>
+          </div>
+          <form id="contact-form">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="cname">Name</label>
+                  <input class="form-control" id="cname" name="Name" placeholder="First/Last Name" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="cemail">Email</label>
+                  <input type="email" class="form-control" id="cemail" name="Email Address" placeholder="Email Address" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="cinquiry">Inquiry</label>
+              <textarea style="height:80px;" class="form-control" id="cinquiry" name="Inquiry" placeholder="Ask us any questions you may have!" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block btn-lg btn-submit">Contact Us</button>
+          </form>
+        </div>
+      </div>
+      <div id="footer">
+        Rangeroos © <span id="year">2015</span> | <span>Site by <a href="http://igdit.com">Ignition Digital</a></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      var $root = $('html, body');
+      $('.scroller').on('click', function() {
+        $root.animate({
+          scrollTop: $( $(this).attr('href') ).offset().top
+        }, 500);
+        $(this).blur();
+        return false;
+      });
+      $('#year').text(new Date().getFullYear());
+
+      $('.btn-submit').on('click', function() {
+        $('.status-box').hide();
+      });
+
+      $('form').on('submit', function(e) {
+        var $form = $(this);
+        var $status = $form.prev();
+        $.ajax({
+          type: "POST",
+          url: "https://formsand.co/f/00exw6",
+          data: $form.serialize(),
+          success: function() {
+            $status.find('.title').text('Request Received');
+            $status.find('.body').text("Thanks! We will be in touch with you shortly.");
+            $status.removeClass('alert-danger').addClass('alert-success');
+            $status.show();
+            $form.find('.form-control').removeClass('error');
             $form.hide();
-        },
-        error: function() {
-            $('#contactFormHeader').html("<span class='error'>Something went wrong. Please refresh the page and try again or simply email your inquiry to <a href='mailto:info@rangeroos.com'>info@rangeroos.com</a></span>");
-            $well.addClass('error');
-            $form.hide();
-        }
-      })
-      e.preventDefault();
+          },
+          error: function() {
+            $status.find('.title').text('Error');
+            $status.find('.body').html("Something went wrong. Please try submitting again or simply email your inquiry to <a href='mailto:info@rangeroos.com'>info@rangeroos.com</a>")
+            $status.addClass('alert-danger').removeClass('alert-success');
+            $status.show();
+            $form.find('.form-control').addClass('error');
+          }
+        })
+        e.preventDefault();
+      });
     });
-  });
-</script>
-<!--[if lt IE 9]>
-<script>
-	document.createElement('video');
-</script>
-<![endif]-->
+  </script>
+  <!--[if lt IE 9]>
+  <script>
+  	document.createElement('video');
+  </script>
+  <![endif]-->
 </body>
 </html>

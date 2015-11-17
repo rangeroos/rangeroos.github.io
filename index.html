@@ -84,13 +84,13 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="name">Name</label>
+                  <label for="name">Name *</label>
                   <input class="form-control" id="name" name="Name" placeholder="First/Last Name" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="date">Preferred Date/Time</label>
+                  <label for="date">Preferred Date/Time *</label>
                   <input type="datetime" class="form-control" id="date" name="Rental Date/Time" placeholder="Date/time of the event" required>
                 </div>
               </div>
@@ -99,7 +99,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="email">Email</label>
+                  <label for="email">Email *</label>
                   <input type="email" class="form-control" id="email" name="Email Address" placeholder="Email Address" required>
                 </div>
               </div>
@@ -167,20 +167,20 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="cname">Name</label>
+                  <label for="cname">Name *</label>
                   <input class="form-control" id="cname" name="Name" placeholder="First/Last Name" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="cemail">Email</label>
+                  <label for="cemail">Email *</label>
                   <input type="email" class="form-control" id="cemail" name="Email Address" placeholder="Email Address" required>
                 </div>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="cinquiry">Inquiry</label>
+              <label for="cinquiry">Inquiry *</label>
               <textarea style="height:80px;" class="form-control" id="cinquiry" name="Inquiry" placeholder="Ask us any questions you may have!" required></textarea>
             </div>
 
@@ -212,30 +212,47 @@
         $('.status-box').hide();
       });
 
+      var formFailed = function($form, $status, title, msg) {
+        $status.find('.title').text(title);
+        $status.find('.body').html(msg)
+        $status.addClass('alert-danger').removeClass('alert-success');
+        $status.show();
+        $form.find('.form-control').addClass('error');
+      };
+
       $('form').on('submit', function(e) {
         var $form = $(this);
         var $status = $form.prev();
-        $.ajax({
-          type: "POST",
-          url: "https://formsand.co/f/00exw6",
-          data: $form.serialize(),
-          success: function() {
-            $status.find('.title').text('Request Received');
-            $status.find('.body').text("Thanks! We will be in touch with you shortly.");
-            $status.removeClass('alert-danger').addClass('alert-success');
-            $status.show();
-            $form.find('.form-control').removeClass('error');
-            $form.hide();
-          },
-          error: function() {
-            $status.find('.title').text('Error');
-            $status.find('.body').html("Something went wrong. Please try submitting again or simply email your inquiry to <a href='mailto:info@rangeroos.com'>info@rangeroos.com</a>")
-            $status.addClass('alert-danger').removeClass('alert-success');
-            $status.show();
-            $form.find('.form-control').addClass('error');
+
+        var valid = true;
+        $form.find('.form-control[required]').each(function() {
+          if(this.value.length == 0) {
+            valid = false;
           }
-        })
+        });
+
+        if(!valid) {
+          formFailed($form, $status, 'Missing Fields', 'Please fill-in all required fields (denoted by an asterisk)');
+        } else {
+          $.ajax({
+            type: "POST",
+            url: "https://formsand.co/f/00exw6",
+            data: $form.serialize(),
+            success: function() {
+              $status.find('.title').text('Request Received');
+              $status.find('.body').text("Thanks! We will be in touch with you shortly.");
+              $status.removeClass('alert-danger').addClass('alert-success');
+              $status.show();
+              $form.find('.form-control').removeClass('error');
+              $form.hide();
+            },
+            error: function() {
+              formFailed($form, $status, 'Error', "Something went wrong. Please try submitting again or simply email your inquiry to <a href='mailto:info@rangeroos.com'>info@rangeroos.com</a>");
+            }
+          });
+        }
         e.preventDefault();
+        return false;
       });
     });
   </script>

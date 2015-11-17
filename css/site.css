@@ -81,8 +81,10 @@ textarea {
   position: relative;
   float: right;
   list-style-type: none;
-  margin-right: 20px;
-  margin-top: 20px;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Oswald', 'Arial', sans-serif;
 }
 
 #nav > li {
@@ -96,8 +98,6 @@ textarea {
   text-decoration: none;
   padding: 15px;
   border-radius: 6px;
-  font-size: 18px;
-  font-family: 'Oswald', 'Arial', sans-serif;
 }
 
 #nav a:focus, #nav a:hover  {
@@ -172,7 +172,7 @@ textarea {
 }
 
 .form-control.error {
-  background-color: #FFBDBD;
+  background-color: #f2dede;
 }
 
 @media (max-width: 767px) {
@@ -193,6 +193,10 @@ textarea {
 @media (min-width: 768px) {
   .pad-left-sm-up {
     padding-left: 30px;
+  }
+  #nav {
+    margin: 20px;
+    font-size: 18px;
   }
 }
 

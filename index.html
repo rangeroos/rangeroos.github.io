@@ -218,6 +218,9 @@
         $status.addClass('alert-danger').removeClass('alert-success');
         $status.show();
         $form.find('.form-control').addClass('error');
+        $('html,body').animate({
+           scrollTop: $status.offset().top - 20
+        });
       };
 
       $('form').on('submit', function(e) {

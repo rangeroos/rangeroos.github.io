@@ -119,6 +119,10 @@ textarea {
   padding-bottom: 22px;
 }
 
+#contact .links {
+  line-height: 35px;
+}
+
 #contact .links a {
   color: #fff;
 }
@@ -173,6 +177,11 @@ textarea {
 
 .form-control.error {
   background-color: #f2dede;
+}
+
+.contact-icon {
+  width: 30px;
+  text-align: center;
 }
 
 @media (max-width: 767px) {

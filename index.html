@@ -190,7 +190,8 @@
               <label for="cinquiry">Inquiry *</label>
               <textarea style="height:80px;" class="form-control" id="cinquiry" name="Inquiry" placeholder="Ask us any questions you may have!" required></textarea>
             </div>
-
+            <input type="hidden" name="_subject" value="New Retailer Inquiry" />
+            <input type="text" name="_gotcha" style="display:none" />
             <button type="submit" class="btn btn-success btn-block btn-lg btn-submit">Contact Us</button>
           </form>
         </div>
@@ -230,7 +231,7 @@
         });
       };
 
-      $('form').on('submit', function(e) {
+      $('#contact-form').on('submit', function(e) {
         var $form = $(this);
         var $status = $form.prev();
 
@@ -245,9 +246,10 @@
           formFailed($form, $status, 'Missing Fields', 'Please fill-in all required fields (denoted by an asterisk)');
         } else {
           $.ajax({
-            type: "POST",
-            url: "https://formsand.co/f/00exw6",
+            method: "POST",
+            url: "https://formspree.io/ericdooley@gmail.com",
             data: $form.serialize(),
+            dataType: "json",
             success: function() {
               $status.find('.title').text('Request Received');
               $status.find('.body').text("Thanks! We will be in touch with you shortly.");
